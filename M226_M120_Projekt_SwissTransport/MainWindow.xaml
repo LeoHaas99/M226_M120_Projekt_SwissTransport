@@ -70,15 +70,26 @@
                         </Grid>
                     </WrapPanel>
                     <Grid Grid.Column="1">
-                       <Button Width="300" Height="100" Content="Verbindungen suchen" Background="#d8f4f4" VerticalAlignment="center" HorizontalAlignment="center">
-                        <Button.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="30"/>
-                            </Style>
-                        </Button.Resources>
-                    </Button> 
+                        <Button Width="300" Height="100" Content="Verbindungen suchen" Background="#d8f4f4" VerticalAlignment="center" HorizontalAlignment="center">
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="30"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                       <DataGrid Margin="20,0" MaxWidth="800">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Abfahrt:" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Von:" Width="2*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Nach:" Width="2*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Verbindung:" Width="*" MinWidth="150"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid> 
                     </Grid>
                     
+
                 </Grid>
             </TabItem>
             <TabItem Header="Abfahrtstafel + Karte">
