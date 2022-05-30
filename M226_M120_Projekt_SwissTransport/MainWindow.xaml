@@ -70,7 +70,7 @@
                         </Grid>
                     </WrapPanel>
                     <Grid Grid.Column="1">
-                        <Button Width="250" Height="100" Content="Verbindungen suchen" Background="#d8f4f4" VerticalAlignment="center" HorizontalAlignment="center">
+                        <Button Margin="0,40,0,0" Padding="20" Content="Verbindungen suchen" Background="#d8f4f4" VerticalAlignment="Top" HorizontalAlignment="center">
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="30"/>
