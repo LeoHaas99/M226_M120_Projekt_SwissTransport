@@ -70,7 +70,8 @@
                         </Grid>
                     </WrapPanel>
                     <Grid Grid.Column="1">
-                        <Button Margin="0,40,0,0" Padding="20" Content="Verbindungen suchen" Background="#d8f4f4" VerticalAlignment="Top" HorizontalAlignment="center">
+                        <Button Margin="0,40,0,0" Padding="20" Background="#d8f4f4" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <TextBlock Text="Verbindungen suchen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
                             <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="30"/>
@@ -93,7 +94,61 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Abfahrtstafel + Karte">
-                <Label Content="Content 2 goes here..." />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <WrapPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"></RowDefinition>
+                                <RowDefinition Height="70"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Content="Von:" Grid.Row="0" Margin="20,0,0,0"></Label>
+                            <TextBox Grid.Row="1"  TextWrapping="Wrap" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0"/>
+                        </Grid>
+                        <Button Margin="20,20,0,0" Padding="20" Background="#d8f4f4">
+                            <TextBlock Text="Station anzeigen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="30"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </WrapPanel>
+                    <Grid Grid.Column="4" Grid.ColumnSpan="2">
+                        <Button Margin="0,40,0,0" Padding="20" VerticalAlignment="Top" HorizontalAlignment="Center">
+                            <TextBlock Text="Stationen in meiner Nähe anzeigen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="30"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                        <DataGrid Margin="20">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Abfahrt:" Width="*" MinWidth="80"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Von:" Width="2*"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nach:" Width="2*"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Verbindung:" Width="*" MinWidth="130"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Background="LightPink" Margin="20">
+                        <Label Content="Map noch nicht implementiert."></Label>
+                    </Grid>
+                </Grid>
             </TabItem>
  
         </TabControl>
