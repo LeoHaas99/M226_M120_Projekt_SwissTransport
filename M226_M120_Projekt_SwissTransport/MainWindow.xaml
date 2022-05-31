@@ -135,7 +135,7 @@
                             </Button.Resources>
                         </Button>
                     </Grid>
-                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Stretch">
                         <DataGrid Margin="20">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Abfahrt:" Width="*" MinWidth="80"></DataGridTextColumn>
@@ -145,7 +145,7 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
-                    <Grid Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Background="LightPink" Margin="20">
+                    <Grid Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Background="LightPink" Margin="20">
                         <TextBlock TextWrapping="Wrap" Text="Map noch nicht implementiert."></TextBlock>
                     </Grid>
                 </Grid>
