@@ -80,7 +80,7 @@
                         </Button>
                     </Grid>
                     <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-                       <DataGrid Margin="20,0" MaxWidth="800">
+                       <DataGrid Margin="20,0,20,20" MaxWidth="800">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Abfahrt:" Width="*"></DataGridTextColumn>
                             <DataGridTextColumn Header="Von:" Width="2*"></DataGridTextColumn>
