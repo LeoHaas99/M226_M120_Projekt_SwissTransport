@@ -132,7 +132,12 @@
                             </Button.Resources>
                         </Button>
                     </Grid>
-                    <Grid Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                       <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
                         <DataGrid Margin="20">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Abfahrt:" Width="*" MinWidth="80"></DataGridTextColumn>
@@ -145,7 +150,9 @@
                     <Grid Grid.Row="1" Grid.Column="1"  Background="LightPink" Margin="20">
                         <TextBlock TextWrapping="Wrap" Text="Map noch nicht implementiert."></TextBlock>
                     </Grid>
-                    <GridSplitter Margin="0,20" Grid.Column="0" Grid.Row="1" Width="5"></GridSplitter>
+                    <GridSplitter Margin="0,20" Grid.Column="0" Grid.Row="1" Width="5" Background="#d8f4f4"></GridSplitter> 
+                    </Grid>
+                    
                 </Grid>
             </TabItem>
  
