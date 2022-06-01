@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:M226_M120_Projekt_SwissTransport"
+        xmlns:gmaps="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
         mc:Ignorable="d"
         Title="Fahrplan App" Height="800" Width="1200">
     <Grid>
@@ -147,9 +148,9 @@
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
-                    <Grid Grid.Row="1" Grid.Column="1"  Background="LightPink" Margin="20">
-                        <TextBlock TextWrapping="Wrap" Text="Map noch nicht implementiert."></TextBlock>
-                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="1" Margin="20">
+                            <gmaps:GMapControl x:Name="mapView" Loaded="mapView_Loaded" />
+                        </Grid>
                     <GridSplitter Margin="0,20" Grid.Column="0" Grid.Row="1" Width="5" Background="#d8f4f4"></GridSplitter> 
                     </Grid>
                     
