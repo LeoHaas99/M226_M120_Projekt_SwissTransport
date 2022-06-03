@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace M226_M120_Projekt_SwissTransport
+namespace M226_M120_Projekt_SwissTransport.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaktionslogik für ConnectionsView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ConnectionsView : UserControl
     {
-        public MainWindow()
+        public ConnectionsView()
         {
             InitializeComponent();
         }
-        
     }
 }

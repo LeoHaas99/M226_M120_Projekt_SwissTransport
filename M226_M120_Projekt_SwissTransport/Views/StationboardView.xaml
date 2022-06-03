@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="M226_M120_Projekt_SwissTransport.Views.StationboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:M226_M120_Projekt_SwissTransport.Views"
+             xmlns:gmaps="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Content="Von:" Grid.Row="0" Margin="20,0,0,0"></Label>
+                <TextBox Grid.Row="1"  TextWrapping="Wrap" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0"/>
+            </Grid>
+            <Button Margin="20,20,0,0" Padding="20" Background="#d8f4f4">
+                <TextBlock Text="Station anzeigen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </WrapPanel>
+        <Grid Grid.Column="1">
+            <Button Margin="0,40,0,0" Padding="20" VerticalAlignment="Top" HorizontalAlignment="Center">
+                <TextBlock Text="Stationen in meiner Nähe anzeigen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                <DataGrid Margin="20">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Abfahrt:" Width="*" MinWidth="80"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Von:" Width="2*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Nach:" Width="2*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Verbindung:" Width="*" MinWidth="130"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" Margin="20">
+                <gmaps:GMapControl x:Name="mapView" Loaded="mapView_Loaded" />
+            </Grid>
+            <GridSplitter Margin="0,20" Grid.Column="0" Grid.Row="1" Width="5" Background="#d8f4f4"></GridSplitter>
+        </Grid>
+
+    </Grid>
+</UserControl>
