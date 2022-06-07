@@ -50,7 +50,7 @@
             </Grid>
         </WrapPanel>
         <Grid Grid.Column="1">
-            <Button Margin="0,40,0,0" Padding="20" Background="#d8f4f4" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button Margin="0,40,0,0" Padding="20" Background="#d8f4f4" VerticalAlignment="Top" HorizontalAlignment="Left" Command="{Binding }">
                 <TextBlock Text="Verbindungen suchen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
