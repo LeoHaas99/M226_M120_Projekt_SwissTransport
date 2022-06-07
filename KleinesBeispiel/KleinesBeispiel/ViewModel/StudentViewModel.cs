@@ -8,7 +8,7 @@ using KleinesBeispiel.Model;
 
 namespace KleinesBeispiel.ViewModel
 {
-    class StudentViewModel
+    public class StudentViewModel
     {
         public ObservableCollection<Student> Students
         {

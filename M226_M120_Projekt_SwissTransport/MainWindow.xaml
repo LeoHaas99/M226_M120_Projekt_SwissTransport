@@ -36,12 +36,12 @@
             </TabControl.Resources>
             <TabItem Header="Verbindungen">
                 <Grid>
-                    <views:ConnectionsView x:Name="ConnectionsView"></views:ConnectionsView>
+                    <views:ConnectionsView x:Name="ConnectionsView" Loaded="ConnectionsView_Loaded"></views:ConnectionsView>
                 </Grid>
             </TabItem>
             <TabItem Header="Abfahrtstafel + Karte">
                 <Grid>
-                    <views:StationboardView x:Name="StationboardView"></views:StationboardView>
+                    <views:StationboardView x:Name="StationboardView" Loaded="StationboardView_Loaded"></views:StationboardView>
                 </Grid>
             </TabItem>
  

@@ -24,6 +24,17 @@ namespace M226_M120_Projekt_SwissTransport
         {
             InitializeComponent();
         }
-        
+
+        private void ConnectionsView_Loaded(object sender, RoutedEventArgs e)
+        {
+            M226_M120_Projekt_SwissTransport.ViewModel.ConnectionsViewModel ConnectionsViewModelObject =
+            new M226_M120_Projekt_SwissTransport.ViewModel.ConnectionsViewModel();
+            ConnectionsView.DataContext = ConnectionsViewModelObject;
+            ConnectionsViewModelObject.OnStartUp();
+        }
+        private void StationboardView_Loaded(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }

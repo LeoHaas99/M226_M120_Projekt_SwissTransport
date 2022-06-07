@@ -11,4 +11,8 @@
     <PackageReference Include="GMap.NET.WinPresentation" Version="2.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+
 </Project>
