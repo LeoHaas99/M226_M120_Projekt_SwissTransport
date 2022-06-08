@@ -6,7 +6,6 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace M226_M120_Projekt_SwissTransport.Commands
 {
@@ -31,11 +30,6 @@ namespace M226_M120_Projekt_SwissTransport.Commands
             }
             var uri = new Uri($"{WebApiHost}connections?from={viewModel.FromStation}&to={viewModel.ToStation}&date={viewModel.Date.ToString("yyyy-MM-dd")}&time={viewModel.Time}&limit=10");
             viewModel.Connections = this.GetObject<Connections>(uri);
-            foreach(var connection in viewModel.Connections.ConnectionList)
-            {
-                MessageBox.Show(connection.From.Platform.ToString());
-            }
-
         }
     }
 }

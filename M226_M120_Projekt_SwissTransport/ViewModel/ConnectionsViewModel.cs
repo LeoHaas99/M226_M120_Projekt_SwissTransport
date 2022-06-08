@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace M226_M120_Projekt_SwissTransport.ViewModel
@@ -98,6 +99,7 @@ namespace M226_M120_Projekt_SwissTransport.ViewModel
             set 
             {
                 connections = value;
+                OnPropertyChanged(nameof(Connections));
             }
         }
         public ICommand ConnectionsCommand { get; }

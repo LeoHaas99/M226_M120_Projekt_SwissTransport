@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:M226_M120_Projekt_SwissTransport.Views"
+             xmlns:local="clr-namespace:M226_M120_Projekt_SwissTransport.Views" xmlns:viewmodel="clr-namespace:M226_M120_Projekt_SwissTransport.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:ConnectionsViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
     <Grid Background="White">
@@ -60,12 +60,12 @@
             </Button>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-            <DataGrid Margin="20,0,20,20" MaxWidth="800" ItemsSource="{Binding Source=Connections.ConnectionsList}" AutoGenerateColumns="False">
+            <DataGrid Margin="20,0,20,20" MaxWidth="800" ItemsSource="{Binding Connections.ConnectionList}" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Abfahrtsdatum:" Width="*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Gleis:" Width="2*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Abfahrt:" Width="2*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Ankunft:" Width="*" MinWidth="150"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Abfahrtsdatum:" Width="2*" Binding="{Binding Path=From.Departure, StringFormat=dd.MM.yyyy}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Gleis:" Width="*" Binding="{Binding Path=From.Platform}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Abfahrt:" Width="*" Binding="{Binding Path=From.Departure, StringFormat=HH:mm}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Ankunft:" Width="*" MinWidth="150" Binding="{Binding Path=To.Arrival, StringFormat=HH:mm}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
