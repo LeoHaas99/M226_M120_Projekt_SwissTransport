@@ -1,7 +1,5 @@
 ﻿using M226_M120_Projekt_SwissTransport.Commands;
 using M226_M120_Projekt_SwissTransport.Model;
-using M226_M120_Projekt_SwissTransport.OnPropChange;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +12,7 @@ using System.Windows.Input;
 
 namespace M226_M120_Projekt_SwissTransport.ViewModel
 {
-    public class ConnectionsViewModel: OnPropertyChange
+    public class ConnectionsViewModel: ViewModelBase
     {
         private string fromStation;
         private string toStation;
@@ -23,8 +21,6 @@ namespace M226_M120_Projekt_SwissTransport.ViewModel
         private Connections connections;
         private Stations fromStations;
         private Stations toStations;
-        private const string WebApiHost = "https://transport.opendata.ch/v1/";
-        private readonly HttpClient httpClient = new HttpClient();
         public ConnectionsViewModel()
         {
             FromStation = String.Empty;
@@ -154,18 +150,6 @@ namespace M226_M120_Projekt_SwissTransport.ViewModel
             var uri = new Uri($"{WebApiHost}locations?query={name}");
             return this.GetObject<Stations>(uri);
         }
-        private T GetObject<T>(Uri uri)
-        {
-            HttpResponseMessage response = this.httpClient
-                .GetAsync(uri)
-                .GetAwaiter()
-                .GetResult();
-            string content = response.Content
-                .ReadAsStringAsync()
-                .GetAwaiter()
-                .GetResult();
-
-            return JsonConvert.DeserializeObject<T>(content);
-        }
+        
     }
 }

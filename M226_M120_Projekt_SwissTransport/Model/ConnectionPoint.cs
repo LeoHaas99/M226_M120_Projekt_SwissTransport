@@ -1,5 +1,4 @@
-﻿using M226_M120_Projekt_SwissTransport.OnPropChange;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace M226_M120_Projekt_SwissTransport.Model
 {
-    public class ConnectionPoint: OnPropertyChange
+    public class ConnectionPoint: ModelBase
     {
         private Station station;
         private DateTime? arrival;

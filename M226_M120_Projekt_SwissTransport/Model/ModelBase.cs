@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M226_M120_Projekt_SwissTransport.OnPropChange
+namespace M226_M120_Projekt_SwissTransport.Model
 {
-    public class OnPropertyChange : INotifyPropertyChanged
+    public class ModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
