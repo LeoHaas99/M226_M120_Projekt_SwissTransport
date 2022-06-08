@@ -53,10 +53,10 @@
             <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
                 <DataGrid Margin="20">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Abfahrt:" Width="*" MinWidth="80"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Von:" Width="2*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Nach:" Width="2*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Verbindung:" Width="*" MinWidth="130"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Name" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Gleis" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Endstation" Width="2*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Abfahrt" Width="*"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
