@@ -1,52 +1,61 @@
-﻿using System;
+﻿using M226_M120_Projekt_SwissTransport.Commands;
+using M226_M120_Projekt_SwissTransport.Model;
+using M226_M120_Projekt_SwissTransport.OnPropChange;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace M226_M120_Projekt_SwissTransport.ViewModel
 {
-    public class ConnectionsViewModel: ViewModelBase
+    public class ConnectionsViewModel: OnPropertyChange
     {
-        public string from = String.Empty;
-        public string to = String.Empty;
-        public string time = String.Empty;
-        public string date = String.Empty;
+        private string fromStation = String.Empty;
+        private string toStation = String.Empty;
+        private string time = String.Empty;
+        private DateTime date = DateTime.Now;
+        Connections connections = new Connections();
+        
         public ConnectionsViewModel()
         {
-            From = String.Empty;
-            To = String.Empty;
-            Date = DateTime.Now.ToString("d");
+            FromStation = String.Empty;
+            ToStation = String.Empty;
+            Date = DateTime.Now;
             Time = DateTime.Now.ToString("HH:mm");
+            ConnectionsCommand = new GetConnectionsCommand(this);
+            Connections = new Connections();
         }
-        
-        public string From 
+
+        public string FromStation 
         { 
             get
             { 
-                return from;
+                return fromStation;
             } 
             set 
             { 
-                if(from != value)
+                if(fromStation != value)
                 {
-                    from = value;
-                    OnPropertyChanged(nameof(From));
+                    fromStation = value;
+                    OnPropertyChanged(nameof(FromStation));
                 }
             } 
         }
-        public string To
+        public string ToStation
         {
             get
             {
-                return to;
+                return toStation;
             }
             set
             {
-                if (to != value)
+                if (toStation != value)
                 {
-                    to = value;
-                    OnPropertyChanged(nameof(To));
+                    toStation = value;
+                    OnPropertyChanged(nameof(ToStation));
                 }
             }
         }
@@ -65,7 +74,7 @@ namespace M226_M120_Projekt_SwissTransport.ViewModel
                 }
             }
         }
-        public string Date
+        public DateTime Date
         {
             get
             {
@@ -80,6 +89,18 @@ namespace M226_M120_Projekt_SwissTransport.ViewModel
                 }
             }
         }
+        public Connections Connections
+        {
+            get
+            {
+                return connections;
+            }
+            set 
+            {
+                connections = value;
+            }
+        }
+        public ICommand ConnectionsCommand { get; }
 
     }
 }

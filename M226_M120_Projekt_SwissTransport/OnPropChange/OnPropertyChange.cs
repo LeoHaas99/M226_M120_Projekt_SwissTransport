@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M226_M120_Projekt_SwissTransport.ViewModel
+namespace M226_M120_Projekt_SwissTransport.OnPropChange
 {
-    public class ViewModelBase: INotifyPropertyChanged
+    public class OnPropertyChange : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
