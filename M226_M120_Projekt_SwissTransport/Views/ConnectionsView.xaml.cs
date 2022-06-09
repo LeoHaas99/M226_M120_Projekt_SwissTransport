@@ -24,5 +24,58 @@ namespace M226_M120_Projekt_SwissTransport.Views
         {
             InitializeComponent();
         }
+
+        private void View_Loaded(object sender, RoutedEventArgs e)
+        {
+            LbFrom.Visibility = Visibility.Hidden;
+            LbTo.Visibility = Visibility.Hidden;
+        }
+        private void FromStation_GotFocus(object sender, RoutedEventArgs e)
+        {
+            LbFrom.Visibility = Visibility.Visible;
+        }
+        private void FromStation_LostFocus(object sender, RoutedEventArgs e)
+        {
+            LbFrom.Visibility = Visibility.Hidden;
+        }
+        private void LbFrom_GotFocus(object sender, RoutedEventArgs e)
+        {
+            LbFrom.Visibility = Visibility.Visible;
+        }
+
+        private void LbFrom_LostFocus(object sender, RoutedEventArgs e)
+        {
+            LbFrom.Visibility = Visibility.Hidden;
+        }
+        private void LbFrom_Click(object sender, MouseButtonEventArgs e)
+        {
+            TbxFrom.Text = LbFrom.SelectedValue.ToString();
+            LbFrom.Visibility = Visibility.Hidden;
+        }
+        private void LbTo_Click(object sender, MouseButtonEventArgs e)
+        {
+            TbxTo.Text = LbTo.SelectedValue.ToString();
+            LbTo.Visibility = Visibility.Hidden;
+        }
+
+        private void ToStation_GotFocus(object sender, RoutedEventArgs e)
+        {
+            LbTo.Visibility = Visibility.Visible;
+        }
+
+        private void ToStation_LostFocus(object sender, RoutedEventArgs e)
+        {
+            LbTo.Visibility = Visibility.Hidden;
+        }
+
+        private void LbTo_LostFocus(object sender, RoutedEventArgs e)
+        {
+            LbTo.Visibility = Visibility.Hidden;
+        }
+
+        private void LbTo_GotFocus(object sender, RoutedEventArgs e)
+        {
+            LbTo.Visibility = Visibility.Visible;
+        }
     }
 }

@@ -49,7 +49,6 @@ namespace M226_M120_Projekt_SwissTransport.ViewModel
                     {
                         FromStations = this.GetStations(fromStation);
                     }
-                    
                 }
             } 
         }

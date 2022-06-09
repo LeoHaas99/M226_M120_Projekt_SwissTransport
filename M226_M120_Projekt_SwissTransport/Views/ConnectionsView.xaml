@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:M226_M120_Projekt_SwissTransport.Views" xmlns:viewmodel="clr-namespace:M226_M120_Projekt_SwissTransport.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:ConnectionsViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200">
+             d:DesignHeight="800" d:DesignWidth="1200" Loaded="View_Loaded">
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -16,25 +16,33 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <WrapPanel Grid.Row="0" Grid.Column="0">
-            <Grid>
+            <Grid Panel.ZIndex="1000">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35"></RowDefinition>
                     <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Von:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <ComboBox IsEditable="True" Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" ItemsSource="{Binding FromStations.StationList}"  Text="{Binding Path=FromStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name">
+                <TextBox Name="TbxFrom"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=FromStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="FromStation_GotFocus" LostFocus="FromStation_LostFocus">
                     
-                </ComboBox>
+                </TextBox>
+                <Canvas Grid.Row="2" Margin="20,-10,0,0" Panel.ZIndex="900" >
+                    <ListBox Name="LbFrom" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding FromStations.StationList}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name" MouseDoubleClick="LbFrom_Click" GotFocus="LbFrom_GotFocus" LostFocus="LbFrom_LostFocus"/>
+                </Canvas>
             </Grid>
-            <Grid>
+            <Grid Panel.ZIndex="900">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35"></RowDefinition>
                     <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Nach:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <ComboBox IsEditable="True" Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" ItemsSource="{Binding ToStations.StationList}"  Text="{Binding Path=ToStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name">
+                <TextBox Name="TbxTo"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=ToStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="ToStation_GotFocus" LostFocus="ToStation_LostFocus">
 
-                </ComboBox>
+                </TextBox>
+                <Canvas Grid.Row="2" Margin="20,-10,0,0" Panel.ZIndex="900" >
+                    <ListBox Name="LbTo" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding ToStations.StationList}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name" MouseDoubleClick="LbTo_Click" LostFocus="LbTo_LostFocus" GotFocus="LbTo_GotFocus"/>
+                </Canvas>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -63,8 +71,8 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-            <DataGrid Margin="20,0,20,20" MaxWidth="800" ItemsSource="{Binding Connections.ConnectionList}" AutoGenerateColumns="False">
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch" Panel.ZIndex="300">
+            <DataGrid Margin="20,0,20,20" MaxWidth="800" ItemsSource="{Binding Connections.ConnectionList}" AutoGenerateColumns="False" Panel.ZIndex="300">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Abfahrtsdatum" Width="2*" Binding="{Binding Path=From.Departure, StringFormat=dd.MM.yyyy}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Gleis" Width="*" Binding="{Binding Path=From.Platform}"></DataGridTextColumn>
