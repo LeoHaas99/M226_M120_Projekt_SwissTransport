@@ -49,13 +49,21 @@ namespace M226_M120_Projekt_SwissTransport.Views
         }
         private void LbFrom_Click(object sender, MouseButtonEventArgs e)
         {
-            TbxFrom.Text = LbFrom.SelectedValue.ToString();
-            LbFrom.Visibility = Visibility.Hidden;
+            if(LbFrom.SelectedValue != null)
+            {
+                TbxFrom.Text = LbFrom.SelectedValue.ToString();
+                LbFrom.Visibility = Visibility.Hidden;
+            }
+            
         }
         private void LbTo_Click(object sender, MouseButtonEventArgs e)
         {
-            TbxTo.Text = LbTo.SelectedValue.ToString();
-            LbTo.Visibility = Visibility.Hidden;
+            if(LbTo.SelectedValue != null)
+            {
+                TbxTo.Text = LbTo.SelectedValue.ToString();
+                LbTo.Visibility = Visibility.Hidden;
+            }
+            
         }
 
         private void ToStation_GotFocus(object sender, RoutedEventArgs e)
