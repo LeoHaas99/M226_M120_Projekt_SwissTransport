@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace M226_M120_Projekt_SwissTransport.Commands
 {
@@ -20,16 +21,24 @@ namespace M226_M120_Projekt_SwissTransport.Commands
         }
         public override void Execute(object? parameter)
         {
-            if (string.IsNullOrEmpty(viewModel.FromStation))
+            try
             {
-                throw new ArgumentNullException(nameof(viewModel.FromStation));
+                if (string.IsNullOrEmpty(viewModel.FromStation))
+                {
+                    throw new ArgumentNullException(nameof(viewModel.FromStation));
+                }
+                if (string.IsNullOrEmpty(viewModel.ToStation))
+                {
+                    throw new ArgumentNullException(nameof(viewModel.ToStation));
+                }
+                var uri = new Uri($"{WebApiHost}connections?from={viewModel.FromStation}&to={viewModel.ToStation}&date={viewModel.Date.ToString("yyyy-MM-dd")}&time={viewModel.Time}&limit=10");
+                viewModel.Connections = this.GetObject<Connections>(uri);
             }
-            if (string.IsNullOrEmpty(viewModel.ToStation))
+            catch (Exception ex)
             {
-                throw new ArgumentNullException(nameof(viewModel.ToStation));
+                MessageBox.Show("Es ist ein Fehler aufgetreten. Bitte überprüfen Sie ihre Eingaben\n" + ex.Message);
             }
-            var uri = new Uri($"{WebApiHost}connections?from={viewModel.FromStation}&to={viewModel.ToStation}&date={viewModel.Date.ToString("yyyy-MM-dd")}&time={viewModel.Time}&limit=10");
-            viewModel.Connections = this.GetObject<Connections>(uri);
+            
         }
     }
 }
