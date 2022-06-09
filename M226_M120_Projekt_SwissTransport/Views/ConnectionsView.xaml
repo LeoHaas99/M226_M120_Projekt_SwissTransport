@@ -23,7 +23,7 @@
                     <RowDefinition Height="10"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Von:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <TextBox Name="TbxFrom"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=FromStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="FromStation_GotFocus" LostFocus="FromStation_LostFocus">
+                <TextBox TabIndex="1" Name="TbxFrom"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=FromStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="FromStation_GotFocus" LostFocus="FromStation_LostFocus">
                     
                 </TextBox>
                 <Canvas Grid.Row="2" Margin="20,-10,0,0" Panel.ZIndex="900" >
@@ -37,7 +37,7 @@
                     <RowDefinition Height="10"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Nach:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <TextBox Name="TbxTo"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=ToStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="ToStation_GotFocus" LostFocus="ToStation_LostFocus">
+                <TextBox TabIndex="2"  Name="TbxTo"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=ToStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="ToStation_GotFocus" LostFocus="ToStation_LostFocus">
 
                 </TextBox>
                 <Canvas Grid.Row="2" Margin="20,-10,0,0" Panel.ZIndex="900" >
@@ -50,7 +50,7 @@
                     <RowDefinition Height="70"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Datum:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <DatePicker Grid.Row="1"   Width="150" Height="50" Margin="20,0,20,0" VerticalContentAlignment="Center" SelectedDate="{Binding Path=Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+                <DatePicker TabIndex="3"  Grid.Row="1"   Width="150" Height="50" Margin="20,0,20,0" VerticalContentAlignment="Center" SelectedDate="{Binding Path=Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -58,11 +58,11 @@
                     <RowDefinition Height="70"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Uhrzeit:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <TextBox Grid.Row="1"   Width="100" Height="50" Margin="20,0,20,0" VerticalContentAlignment="Center" Text="{Binding Path=Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox  TabIndex="4" Grid.Row="1"   Width="100" Height="50" Margin="20,0,20,0" VerticalContentAlignment="Center" Text="{Binding Path=Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             </Grid>
         </WrapPanel>
         <Grid Grid.Column="1">
-            <Button Margin="0,40,0,0" Padding="20" Background="#d8f4f4" VerticalAlignment="Top" HorizontalAlignment="Left" Command="{Binding ConnectionsCommand}">
+            <Button  TabIndex="5"  Margin="0,40,0,0" Padding="20" Background="#d8f4f4" VerticalAlignment="Top" HorizontalAlignment="Left" Command="{Binding ConnectionsCommand}">
                 <TextBlock Text="Verbindungen suchen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
