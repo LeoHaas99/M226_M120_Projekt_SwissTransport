@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M226_M120_Projekt_SwissTransport.ViewModel
+namespace M226_M120_Projekt_SwissTransport.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:M226_M120_Projekt_SwissTransport.Views" xmlns:viewmodel="clr-namespace:M226_M120_Projekt_SwissTransport.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:ConnectionsViewModel}"
+             xmlns:local="clr-namespace:M226_M120_Projekt_SwissTransport.Views" xmlns:viewmodel="clr-namespace:M226_M120_Projekt_SwissTransport.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodel:ConnectionsViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200" Loaded="View_Loaded">
     <Grid Background="White">

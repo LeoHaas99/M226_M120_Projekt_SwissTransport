@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M226_M120_Projekt_SwissTransport.Model
+namespace M226_M120_Projekt_SwissTransport.Models
 {
     public class ModelBase : INotifyPropertyChanged
     {

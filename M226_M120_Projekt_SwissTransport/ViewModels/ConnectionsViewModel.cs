@@ -1,5 +1,5 @@
 ﻿using M226_M120_Projekt_SwissTransport.Commands;
-using M226_M120_Projekt_SwissTransport.Model;
+using M226_M120_Projekt_SwissTransport.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace M226_M120_Projekt_SwissTransport.ViewModel
+namespace M226_M120_Projekt_SwissTransport.ViewModels
 {
     public class ConnectionsViewModel: ViewModelBase
     {

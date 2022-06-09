@@ -1,5 +1,5 @@
-﻿using M226_M120_Projekt_SwissTransport.Model;
-using M226_M120_Projekt_SwissTransport.ViewModel;
+﻿using M226_M120_Projekt_SwissTransport.Models;
+using M226_M120_Projekt_SwissTransport.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
