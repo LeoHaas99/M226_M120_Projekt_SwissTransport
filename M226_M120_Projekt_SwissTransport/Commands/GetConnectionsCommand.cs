@@ -33,6 +33,10 @@ namespace M226_M120_Projekt_SwissTransport.Commands
                 }
                 var uri = new Uri($"{WebApiHost}connections?from={viewModel.FromStation}&to={viewModel.ToStation}&date={viewModel.Date.ToString("yyyy-MM-dd")}&time={viewModel.Time}&limit=10");
                 viewModel.Connections = this.GetObject<Connections>(uri);
+
+                if(viewModel.Connections.ConnectionList.Count == 0){
+                    MessageBox.Show("Es wurden keine Verbindungen gefunden");
+                }
             }
             catch (Exception ex)
             {
