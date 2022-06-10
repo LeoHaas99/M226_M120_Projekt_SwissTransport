@@ -33,7 +33,9 @@ namespace M226_M120_Projekt_SwissTransport
         }
         private void StationboardView_Loaded(object sender, RoutedEventArgs e)
         {
-           
+            M226_M120_Projekt_SwissTransport.ViewModels.StationBoardViewModel StationBoardViewModelObject =
+                 new M226_M120_Projekt_SwissTransport.ViewModels.StationBoardViewModel();
+            StationboardView.DataContext = StationBoardViewModelObject;
         }
     }
 }

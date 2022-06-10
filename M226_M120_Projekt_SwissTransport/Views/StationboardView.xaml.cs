@@ -43,7 +43,7 @@ namespace M226_M120_Projekt_SwissTransport.Views
 
         private void ViewLoaded(object sender, RoutedEventArgs e)
         {
-            LbStation.Visibility = Visibility.Hidden;
+            //LbStation.Visibility = Visibility.Hidden;
         }
     }
 }
