@@ -8,3 +8,8 @@ Für die Umsetzung II wurde ein Kleines Beispiel hinterlegt. Mit einem Tutorial 
 <ul>
   <li>Das MVVM-Pattern wurde für die View Connections wurde umgesetzt.</li>
 </ul>
+<h2>Bekannte Probleme</h2>
+<ul>
+  <li>Die Autocomplete-Vorschläge können nur mit Doppel-Click übernommen werden.</li>
+  <li>Die Inputs sind durch das Autocomplete laggy.</li>
+</ul>
