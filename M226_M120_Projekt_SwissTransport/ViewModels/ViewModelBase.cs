@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using M226_M120_Projekt_SwissTransport.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,16 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
                 .GetResult();
 
             return JsonConvert.DeserializeObject<T>(content);
+        }
+        public Stations GetStations(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+
+            var uri = new Uri($"{WebApiHost}locations?query={name}");
+            return this.GetObject<Stations>(uri);
         }
     }
 }
