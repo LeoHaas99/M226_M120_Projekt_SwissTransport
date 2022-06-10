@@ -10,7 +10,7 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
     public class StationBoardViewModel : ViewModelBase
     {
         private string station;
-        private StationBoardRoot stationBoardRoot;
+        private StationBoard stationBoard;
 
         public StationBoardViewModel()
         {
@@ -26,12 +26,12 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
             }
         }
 
-        public StationBoardRoot StationBoardRoot {
-            get => stationBoardRoot; 
+        public StationBoard StationBoard {
+            get => stationBoard; 
             set
             {
-                stationBoardRoot = value;
-                OnPropertyChanged(nameof(StationBoardRoot));
+                stationBoard = value;
+                OnPropertyChanged(nameof(StationBoard));
             }
         }
 
