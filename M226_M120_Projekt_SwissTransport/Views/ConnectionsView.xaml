@@ -72,7 +72,7 @@
             </Button>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch" Panel.ZIndex="300">
-            <DataGrid Margin="20,0,20,20" MaxWidth="800" ItemsSource="{Binding Connections.ConnectionList}" AutoGenerateColumns="False" Panel.ZIndex="300">
+            <DataGrid IsReadOnly="True" Margin="20,0,20,20" MaxWidth="800" ItemsSource="{Binding Connections.ConnectionList}" AutoGenerateColumns="False" Panel.ZIndex="300">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Abfahrtsdatum" Width="2*" Binding="{Binding Path=From.Departure, StringFormat=dd.MM.yyyy}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Gleis" Width="*" Binding="{Binding Path=From.Platform}"></DataGridTextColumn>
