@@ -25,6 +25,9 @@
                 </Grid.RowDefinitions>
                 <Label Content="Von:" Grid.Row="0" Margin="20,0,0,0"></Label>
                 <TextBox Grid.Row="1"  TextWrapping="Wrap" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0"/>
+                <Canvas Grid.Row="2" Margin="20,-10,0,0" Panel.ZIndex="900" >
+                    <ListBox Name="LbStation" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding Stations.StationList}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name"  KeyDown="LbFrom_KeyDown" MouseDoubleClick="LbFrom_Click" GotFocus="LbFrom_GotFocus" LostFocus="LbFrom_LostFocus"/>
+                </Canvas>
             </Grid>
             <Button Margin="20,20,0,0" Padding="20" Background="#d8f4f4">
                 <TextBlock Text="Station anzeigen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
