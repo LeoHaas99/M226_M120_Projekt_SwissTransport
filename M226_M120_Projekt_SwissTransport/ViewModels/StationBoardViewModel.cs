@@ -1,9 +1,11 @@
-﻿using M226_M120_Projekt_SwissTransport.Models;
+﻿using M226_M120_Projekt_SwissTransport.Commands;
+using M226_M120_Projekt_SwissTransport.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace M226_M120_Projekt_SwissTransport.ViewModels
 {
@@ -15,6 +17,8 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
         public StationBoardViewModel()
         {
             Station = String.Empty;
+            StationBoard = new StationBoard();
+            StationBoardCommand = new GetStationBoardCommand(this);
         }
 
         public string Station { 
@@ -35,5 +39,6 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
             }
         }
 
+        public ICommand StationBoardCommand { get; }
     }
 }

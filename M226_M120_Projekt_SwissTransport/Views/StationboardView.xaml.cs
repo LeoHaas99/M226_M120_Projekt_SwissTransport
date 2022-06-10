@@ -40,5 +40,10 @@ namespace M226_M120_Projekt_SwissTransport.Views
             // lets the user drag the map with the left mouse button
             mapView.DragButton = MouseButton.Left;
         }
+
+        private void ViewLoaded(object sender, RoutedEventArgs e)
+        {
+            LbStation.Visibility = Visibility.Hidden;
+        }
     }
 }
