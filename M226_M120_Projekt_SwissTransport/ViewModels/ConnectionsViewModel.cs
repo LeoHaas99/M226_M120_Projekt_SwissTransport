@@ -139,16 +139,6 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
         }
         public ICommand ConnectionsCommand { get; }
 
-        public Stations GetStations(string name)
-        {
-            if (string.IsNullOrEmpty(name))
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            var uri = new Uri($"{WebApiHost}locations?query={name}");
-            return this.GetObject<Stations>(uri);
-        }
         
     }
 }
