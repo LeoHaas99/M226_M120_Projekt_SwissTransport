@@ -30,6 +30,16 @@ namespace M226_M120_Projekt_SwissTransport.Views
             LbFrom.Visibility = Visibility.Hidden;
             LbTo.Visibility = Visibility.Hidden;
         }
+
+        private void FromStation_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Down)
+            {
+                LbFrom.SelectedIndex = 0;
+                LbFrom.Focus();
+            }
+        }
+
         private void FromStation_GotFocus(object sender, RoutedEventArgs e)
         {
             LbFrom.Visibility = Visibility.Visible;
@@ -56,6 +66,16 @@ namespace M226_M120_Projekt_SwissTransport.Views
             }
             
         }
+
+        private void LbFrom_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                TbxFrom.Text = LbFrom.SelectedValue.ToString();
+                LbFrom.Visibility = Visibility.Hidden;
+            }
+        }
+
         private void LbTo_Click(object sender, MouseButtonEventArgs e)
         {
             if(LbTo.SelectedValue != null)
@@ -64,6 +84,25 @@ namespace M226_M120_Projekt_SwissTransport.Views
                 LbTo.Visibility = Visibility.Hidden;
             }
             
+        }
+
+        private void LbTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                TbxTo.Text = LbTo.SelectedValue.ToString();
+                LbTo.Visibility = Visibility.Hidden;
+            }
+        }
+
+
+        private void ToStation_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Down)
+            {
+                LbTo.SelectedIndex = 0;
+                LbTo.Focus();
+            }
         }
 
         private void ToStation_GotFocus(object sender, RoutedEventArgs e)

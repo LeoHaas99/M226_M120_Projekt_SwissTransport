@@ -23,11 +23,11 @@
                     <RowDefinition Height="10"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Von:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <TextBox TabIndex="1" Name="TbxFrom"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=FromStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="FromStation_GotFocus" LostFocus="FromStation_LostFocus">
+                <TextBox TabIndex="1" Name="TbxFrom"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=FromStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="FromStation_GotFocus" LostFocus="FromStation_LostFocus" PreviewKeyDown="FromStation_PreviewKeyDown">
                     
                 </TextBox>
                 <Canvas Grid.Row="2" Margin="20,-10,0,0" Panel.ZIndex="900" >
-                    <ListBox Name="LbFrom" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding FromStations.StationList}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name" MouseDoubleClick="LbFrom_Click" GotFocus="LbFrom_GotFocus" LostFocus="LbFrom_LostFocus"/>
+                    <ListBox Name="LbFrom" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding FromStations.StationList}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name"  KeyDown="LbFrom_KeyDown" MouseDoubleClick="LbFrom_Click" GotFocus="LbFrom_GotFocus" LostFocus="LbFrom_LostFocus"/>
                 </Canvas>
             </Grid>
             <Grid Panel.ZIndex="900">
@@ -37,11 +37,9 @@
                     <RowDefinition Height="10"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Nach:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <TextBox TabIndex="2"  Name="TbxTo"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=ToStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="ToStation_GotFocus" LostFocus="ToStation_LostFocus">
-
-                </TextBox>
+                <TextBox TabIndex="2"  Name="TbxTo"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=ToStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="ToStation_GotFocus" LostFocus="ToStation_LostFocus" PreviewKeyDown="ToStation_PreviewKeyDown"/>
                 <Canvas Grid.Row="2" Margin="20,-10,0,0" Panel.ZIndex="900" >
-                    <ListBox Name="LbTo" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding ToStations.StationList}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name" MouseDoubleClick="LbTo_Click" LostFocus="LbTo_LostFocus" GotFocus="LbTo_GotFocus"/>
+                    <ListBox Name="LbTo" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding ToStations.StationList}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name" MouseDoubleClick="LbTo_Click" LostFocus="LbTo_LostFocus" GotFocus="LbTo_GotFocus" KeyDown="LbTo_KeyDown"/>
                 </Canvas>
             </Grid>
             <Grid>
