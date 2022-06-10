@@ -10,6 +10,6 @@ Für die Umsetzung II wurde ein Kleines Beispiel hinterlegt. Mit einem Tutorial 
 </ul>
 <h2>Bekannte Probleme</h2>
 <ul>
-  <li>Die Autocomplete-Vorschläge können nur mit Doppel-Click übernommen werden.</li>
+  <li>Die Autocomplete-Vorschläge können nur mit Doppel-Click übernommen werden. --> Die Liste kann jetzt auch mit Pfeiltasten und Enter navigiert werden.</li>
   <li>Die Inputs sind durch das Autocomplete laggy.</li>
 </ul>
