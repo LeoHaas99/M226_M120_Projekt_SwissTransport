@@ -55,12 +55,12 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Stretch">
-                <DataGrid Margin="20">
+                <DataGrid Margin="20" ItemsSource="{Binding StationBoard.Entries}" IsReadOnly="true" AutoGenerateColumns="false">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Name" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Gleis" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Endstation" Width="2*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Abfahrt" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Gleis" Width="*" Binding="{Binding Stop.Platform}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Endstation" Width="2*" Binding="{Binding To}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Abfahrt" Width="*" Binding="{Binding Stop.Departure, StringFormat=HH:mm}"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

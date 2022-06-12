@@ -33,11 +33,6 @@ namespace M226_M120_Projekt_SwissTransport.Commands
                 {
                     MessageBox.Show("Für diese Station wurde keine Verbindungen gefunden.");
                 }
-
-                foreach(var entry in viewModel.StationBoard.Entries)
-                {
-                    MessageBox.Show(entry.Category);
-                }
             }
             catch (Exception ex)
             {
