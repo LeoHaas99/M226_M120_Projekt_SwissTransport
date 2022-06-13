@@ -14,71 +14,71 @@ namespace M226_M120_Projekt_SwissTransport.Views
 
         private void View_Loaded(object sender, RoutedEventArgs e)
         {
-            LbFrom.Visibility = Visibility.Hidden;
-            LbTo.Visibility = Visibility.Hidden;
+            LbxFrom.Visibility = Visibility.Hidden;
+            LbxTo.Visibility = Visibility.Hidden;
         }
 
         private void FromStation_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Down)
             {
-                LbFrom.SelectedIndex = 0;
-                LbFrom.Focus();
+                LbxFrom.SelectedIndex = 0;
+                LbxFrom.Focus();
             }
         }
 
         private void FromStation_GotFocus(object sender, RoutedEventArgs e)
         {
-            LbFrom.Visibility = Visibility.Visible;
+            LbxFrom.Visibility = Visibility.Visible;
         }
         private void FromStation_LostFocus(object sender, RoutedEventArgs e)
         {
-            LbFrom.Visibility = Visibility.Hidden;
+            LbxFrom.Visibility = Visibility.Hidden;
         }
-        private void LbFrom_GotFocus(object sender, RoutedEventArgs e)
+        private void LbxFrom_GotFocus(object sender, RoutedEventArgs e)
         {
-            LbFrom.Visibility = Visibility.Visible;
+            LbxFrom.Visibility = Visibility.Visible;
         }
 
-        private void LbFrom_LostFocus(object sender, RoutedEventArgs e)
+        private void LbxFrom_LostFocus(object sender, RoutedEventArgs e)
         {
-            LbFrom.Visibility = Visibility.Hidden;
+            LbxFrom.Visibility = Visibility.Hidden;
         }
-        private void LbFrom_Click(object sender, MouseButtonEventArgs e)
+        private void LbxFrom_Click(object sender, MouseButtonEventArgs e)
         {
-            if(LbFrom.SelectedValue != null)
+            if(LbxFrom.SelectedValue != null)
             {
-                TbxFrom.Text = LbFrom.SelectedValue.ToString();
-                LbFrom.Visibility = Visibility.Hidden;
+                TbxFrom.Text = LbxFrom.SelectedValue.ToString();
+                LbxFrom.Visibility = Visibility.Hidden;
             }
             
         }
 
-        private void LbFrom_KeyDown(object sender, KeyEventArgs e)
+        private void LbxFrom_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                TbxFrom.Text = LbFrom.SelectedValue.ToString();
-                LbFrom.Visibility = Visibility.Hidden;
+                TbxFrom.Text = LbxFrom.SelectedValue.ToString();
+                LbxFrom.Visibility = Visibility.Hidden;
             }
         }
 
-        private void LbTo_Click(object sender, MouseButtonEventArgs e)
+        private void LbxTo_Click(object sender, MouseButtonEventArgs e)
         {
-            if(LbTo.SelectedValue != null)
+            if(LbxTo.SelectedValue != null)
             {
-                TbxTo.Text = LbTo.SelectedValue.ToString();
-                LbTo.Visibility = Visibility.Hidden;
+                TbxTo.Text = LbxTo.SelectedValue.ToString();
+                LbxTo.Visibility = Visibility.Hidden;
             }
             
         }
 
-        private void LbTo_KeyDown(object sender, KeyEventArgs e)
+        private void LbxTo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                TbxTo.Text = LbTo.SelectedValue.ToString();
-                LbTo.Visibility = Visibility.Hidden;
+                TbxTo.Text = LbxTo.SelectedValue.ToString();
+                LbxTo.Visibility = Visibility.Hidden;
             }
         }
 
@@ -87,29 +87,29 @@ namespace M226_M120_Projekt_SwissTransport.Views
         {
             if (e.Key == Key.Down)
             {
-                LbTo.SelectedIndex = 0;
-                LbTo.Focus();
+                LbxTo.SelectedIndex = 0;
+                LbxTo.Focus();
             }
         }
 
         private void ToStation_GotFocus(object sender, RoutedEventArgs e)
         {
-            LbTo.Visibility = Visibility.Visible;
+            LbxTo.Visibility = Visibility.Visible;
         }
 
         private void ToStation_LostFocus(object sender, RoutedEventArgs e)
         {
-            LbTo.Visibility = Visibility.Hidden;
+            LbxTo.Visibility = Visibility.Hidden;
         }
 
-        private void LbTo_LostFocus(object sender, RoutedEventArgs e)
+        private void LbxTo_LostFocus(object sender, RoutedEventArgs e)
         {
-            LbTo.Visibility = Visibility.Hidden;
+            LbxTo.Visibility = Visibility.Hidden;
         }
 
-        private void LbTo_GotFocus(object sender, RoutedEventArgs e)
+        private void LbxTo_GotFocus(object sender, RoutedEventArgs e)
         {
-            LbTo.Visibility = Visibility.Visible;
+            LbxTo.Visibility = Visibility.Visible;
         }
     }
 }

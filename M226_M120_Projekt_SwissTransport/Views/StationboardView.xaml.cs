@@ -45,7 +45,36 @@ namespace M226_M120_Projekt_SwissTransport.Views
 
         private void ViewLoaded(object sender, RoutedEventArgs e)
         {
-            //LbStation.Visibility = Visibility.Hidden;
+            LbxStation.Visibility = Visibility.Hidden;
+        }
+
+        private void TbxStation_GotFocus(object sender, RoutedEventArgs e)
+        {
+            LbxStation.Visibility = Visibility.Visible;
+        }
+
+        private void TbxStation_LostFocus(object sender, RoutedEventArgs e)
+        {
+            LbxStation.Visibility = Visibility.Hidden;
+        }
+
+        private void LbxStation_LostFocus(object sender, RoutedEventArgs e)
+        {
+            LbxStation.Visibility = Visibility.Hidden;
+        }
+
+        private void LbxStation_GotFocus(object sender, RoutedEventArgs e)
+        {
+            LbxStation.Visibility = Visibility.Visible;
+        }
+
+        private void LbxStation_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (LbxStation.SelectedValue != null)
+            {
+                TbxStation.Text = LbxStation.SelectedValue.ToString();
+                LbxStation.Visibility = Visibility.Hidden;
+            }
         }
     }
 }
