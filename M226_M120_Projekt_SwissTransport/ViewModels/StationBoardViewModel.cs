@@ -11,6 +11,7 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
         //Fields
         private string station;
         private StationBoard stationBoard;
+        private Stations stations;
 
         //Constructor
         public StationBoardViewModel()
@@ -18,6 +19,7 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
             Station = String.Empty;
             StationBoard = new StationBoard();
             StationBoardCommand = new GetStationBoardCommand(this);
+            Stations = new Stations();
         }
 
         //Properties
@@ -39,6 +41,18 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
             }
         }
 
+        public Stations Stations
+        {
+            get
+            {
+                return stations;
+            }
+            set
+            {
+                stations = value;
+                OnPropertyChanged(nameof(stations));
+            }
+        }
         public ICommand StationBoardCommand { get; }
     }
 }

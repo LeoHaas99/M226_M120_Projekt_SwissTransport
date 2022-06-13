@@ -27,7 +27,7 @@
                 <Label Content="Von:" Grid.Row="0" Margin="20,0,0,0"></Label>
                 <TextBox Name="TbxStation" Grid.Row="1" TextWrapping="Wrap" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Station, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="TbxStation_GotFocus" LostFocus="TbxStation_LostFocus" />
                 <Canvas Grid.Column="0" Grid.Row="2" Height="100" Margin="20,-10,0,0" Panel.ZIndex="900" >
-                    <ListBox  Name="LbxStation" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding Stations.Entries}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name" LostFocus="LbxStation_LostFocus" GotFocus="LbxStation_GotFocus" MouseDoubleClick="LbxStation_Click"/>
+                    <ListBox  Name="LbxStation" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding Stations.StationList}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name" LostFocus="LbxStation_LostFocus" GotFocus="LbxStation_GotFocus" MouseDoubleClick="LbxStation_Click"/>
                 </Canvas>
             </Grid>
             <Button Margin="20,20,0,0" Padding="20" Background="#d8f4f4" Command="{Binding StationBoardCommand}" Panel.ZIndex="500">
