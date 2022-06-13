@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.Net.Http;
-
+using System.Windows;
 
 namespace M226_M120_Projekt_SwissTransport.ViewModels
 {
@@ -45,13 +45,22 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
         // Gets Stations from the autocomplete Listbox
         protected Stations GetStations(string name)
         {
-            if (string.IsNullOrEmpty(name))
+            try
             {
-                throw new ArgumentNullException(nameof(name));
-            }
+            if (string.IsNullOrEmpty(name))
+                {
+                    throw new ArgumentNullException(nameof(name));
+                }
 
             var uri = new Uri($"{WebApiHost}locations?query={name}");
             return this.GetObject<Stations>(uri);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Es ist ein Fehler aufgetreten. Überprüfen Sie Ihre Internetverbindung\n" + ex.Message);
+                return new Stations();
+            }
+            
         }
     }
 }
