@@ -43,7 +43,7 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
         }
 
         // Gets Stations from the autocomplete Listbox
-        public Stations GetStations(string name)
+        protected Stations GetStations(string name)
         {
             if (string.IsNullOrEmpty(name))
             {
