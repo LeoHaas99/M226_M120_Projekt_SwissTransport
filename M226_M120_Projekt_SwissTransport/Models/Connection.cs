@@ -1,59 +1,15 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 
 namespace M226_M120_Projekt_SwissTransport.Models
 {
-    public class Connection: ModelBase
+    public class Connection
     {
-        private ConnectionPoint from;
-        private ConnectionPoint to;
-        private string duration;
-
         [JsonProperty("from")]
-        public ConnectionPoint From
-        { 
-            get
-            {
-                return from;
-            }
-            set
-            {
-                from = value;
-                OnPropertyChanged(nameof(From));
-            }
-        }
+        public ConnectionPoint? From { get; set; }
 
         [JsonProperty("to")]
-        public ConnectionPoint To
-        {
-            get
-            {
-                return to;
-            }
-            set
-            {
-                to = value;
-                OnPropertyChanged(nameof(To));
-            }
-        }
-
-        [JsonProperty("duration")]
-        public string Duration
-        {
-            get
-            {
-                return duration;
-            }
-            set
-            {
-                duration = value;
-                OnPropertyChanged(nameof(Duration));
-            }
-        }
+        public ConnectionPoint? To { get; set; }
     }
 }

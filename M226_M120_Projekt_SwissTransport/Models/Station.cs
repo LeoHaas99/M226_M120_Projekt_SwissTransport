@@ -1,87 +1,23 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace M226_M120_Projekt_SwissTransport.Models
 {
-    public class Station: ModelBase
+    public class Station
     {
-        private string id;
-        private string name;
-        private int? score;
-        private Coordinate coordinate;
-        private double? distance;
         [JsonProperty("id")]
-        public string Id
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-                OnPropertyChanged(nameof(Id));
-            }
-        }
+        public string? Id { get; set; }
 
         [JsonProperty("name")]
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-                OnPropertyChanged(nameof(Name));
-            }
-        }
+        public string? Name { get; set; }
 
         [JsonProperty("score")]
-        public int? Score
-        {
-            get
-            {
-                return score;
-            }
-            set
-            {
-                score = value;
-                OnPropertyChanged(nameof(Score));
-            }
-        }
+        public int? Score { get; set; }
 
         [JsonProperty("coordinate")]
-        public Coordinate Coordinate
-        {
-            get
-            {
-                return coordinate;
-            }
-            set
-            {
-                coordinate = value;
-                OnPropertyChanged(nameof(Coordinate));
-            }
-        }
+        public Coordinate? Coordinate { get; set; }
 
         [JsonProperty("distance")]
-        public double? Distance
-        {
-            get
-            {
-                return distance;
-            }
-            set
-            {
-                distance = value;
-                OnPropertyChanged(nameof(Distance));
-            }
-        }
+        public double? Distance { get; set; }
     }
 }

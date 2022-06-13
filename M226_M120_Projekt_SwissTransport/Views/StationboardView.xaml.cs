@@ -26,6 +26,8 @@ namespace M226_M120_Projekt_SwissTransport.Views
         }
         private void mapView_Loaded(object sender, RoutedEventArgs e)
         {
+            // standard map configuration
+
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerAndCache;
             // choose your provider here
             mapView.MapProvider = GMap.NET.MapProviders.OpenStreetMapProvider.Instance;

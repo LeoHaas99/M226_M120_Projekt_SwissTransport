@@ -1,13 +1,6 @@
 ﻿using M226_M120_Projekt_SwissTransport.Commands;
 using M226_M120_Projekt_SwissTransport.Models;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
 namespace M226_M120_Projekt_SwissTransport.ViewModels
