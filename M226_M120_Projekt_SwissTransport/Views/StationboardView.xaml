@@ -18,7 +18,7 @@
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
         <WrapPanel Grid.Row="0" Grid.Column="0">
-            <Grid>
+            <Grid Panel.ZIndex="800">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35"></RowDefinition>
                     <RowDefinition Height="70"></RowDefinition>
@@ -30,7 +30,7 @@
                     <ListBox  Name="LbStation" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding Stations.Entries}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name"/>
                 </Canvas>
             </Grid>
-            <Button Margin="20,20,0,0" Padding="20" Background="#d8f4f4" Command="{Binding StationBoardCommand}">
+            <Button Margin="20,20,0,0" Padding="20" Background="#d8f4f4" Command="{Binding StationBoardCommand}" Panel.ZIndex="500">
                 <TextBlock Text="Station anzeigen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
