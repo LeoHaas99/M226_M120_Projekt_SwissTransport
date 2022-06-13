@@ -20,10 +20,16 @@ namespace M226_M120_Projekt_SwissTransport.Views
 
         private void FromStation_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            LbxFrom.Visibility = Visibility.Visible;
             if (e.Key == Key.Down)
             {
                 LbxFrom.SelectedIndex = 0;
                 LbxFrom.Focus();
+            }
+            else if(e.Key == Key.Enter)
+            {
+                LbxFrom.Visibility = Visibility.Hidden;
+                TbxTo.Focus();
             }
         }
 
@@ -60,6 +66,7 @@ namespace M226_M120_Projekt_SwissTransport.Views
             {
                 TbxFrom.Text = LbxFrom.SelectedValue.ToString();
                 LbxFrom.Visibility = Visibility.Hidden;
+                TbxTo.Focus();
             }
         }
 
@@ -79,16 +86,22 @@ namespace M226_M120_Projekt_SwissTransport.Views
             {
                 TbxTo.Text = LbxTo.SelectedValue.ToString();
                 LbxTo.Visibility = Visibility.Hidden;
+                DatePicker.Focus();
             }
         }
 
 
         private void ToStation_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            LbxTo.Visibility = Visibility.Visible;
             if (e.Key == Key.Down)
             {
                 LbxTo.SelectedIndex = 0;
                 LbxTo.Focus();
+            }
+            else if(e.Key == Key.Enter){
+                LbxTo.Visibility = Visibility.Hidden;
+                DatePicker.Focus();
             }
         }
 

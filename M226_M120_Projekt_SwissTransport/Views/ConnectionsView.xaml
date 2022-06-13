@@ -37,7 +37,8 @@
                     <RowDefinition Height="10"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Nach:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <TextBox TabIndex="2"  Name="TbxTo"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=ToStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="ToStation_GotFocus" LostFocus="ToStation_LostFocus" PreviewKeyDown="ToStation_PreviewKeyDown"/>
+                <TextBox TabIndex="2"  Name="TbxTo"  Grid.Row="1" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Path=ToStation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="ToStation_GotFocus" LostFocus="ToStation_LostFocus" PreviewKeyDown="ToStation_PreviewKeyDown">
+                </TextBox>
                 <Canvas Grid.Row="2" Margin="20,-10,0,0" Panel.ZIndex="900" >
                     <ListBox Name="LbxTo" ClipToBounds="False" Width="300" Height="100" ItemsSource="{Binding ToStations.StationList}" DisplayMemberPath="Name" Panel.ZIndex="1000" SelectedValuePath="Name" MouseDoubleClick="LbxTo_Click" LostFocus="LbxTo_LostFocus" GotFocus="LbxTo_GotFocus" KeyDown="LbxTo_KeyDown"/>
                 </Canvas>
@@ -48,7 +49,7 @@
                     <RowDefinition Height="70"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Datum:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <DatePicker TabIndex="3"  Grid.Row="1"   Width="150" Height="50" Margin="20,0,20,0" VerticalContentAlignment="Center" SelectedDate="{Binding Path=Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+                <DatePicker Name="DatePicker" TabIndex="3"  Grid.Row="1"   Width="150" Height="50" Margin="20,0,20,0" VerticalContentAlignment="Center" SelectedDate="{Binding Path=Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -56,7 +57,8 @@
                     <RowDefinition Height="70"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Uhrzeit:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <TextBox  TabIndex="4" Grid.Row="1"   Width="100" Height="50" Margin="20,0,20,0" VerticalContentAlignment="Center" Text="{Binding Path=Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBox Name="TbxTime"  TabIndex="4" Grid.Row="1"   Width="100" Height="50" Margin="20,0,20,0" VerticalContentAlignment="Center" Text="{Binding Path=Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                </TextBox>
             </Grid>
         </WrapPanel>
         <Grid Grid.Column="1">
