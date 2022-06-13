@@ -5,8 +5,10 @@ using System.Windows.Input;
 
 namespace M226_M120_Projekt_SwissTransport.ViewModels
 {
+    //ViewModel for ConnectionsView
     public class ConnectionsViewModel: ViewModelBase
     {
+        //Fields
         private string fromStation;
         private string toStation;
         private string time;
@@ -14,6 +16,8 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
         private Connections connections;
         private Stations fromStations;
         private Stations toStations;
+
+        //Constructor
         public ConnectionsViewModel()
         {
             FromStation = String.Empty;
@@ -26,6 +30,7 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
             ToStations = new Stations();
         }
 
+        //Properties
         public string FromStation 
         { 
             get

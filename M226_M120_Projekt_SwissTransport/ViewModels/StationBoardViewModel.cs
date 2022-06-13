@@ -5,11 +5,14 @@ using System.Windows.Input;
 
 namespace M226_M120_Projekt_SwissTransport.ViewModels
 {
+    //ViewModel for StationboardView
     public class StationBoardViewModel : ViewModelBase
     {
+        //Fields
         private string station;
         private StationBoard stationBoard;
 
+        //Constructor
         public StationBoardViewModel()
         {
             Station = String.Empty;
@@ -17,6 +20,7 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
             StationBoardCommand = new GetStationBoardCommand(this);
         }
 
+        //Properties
         public string Station { 
             get => station;
             set 

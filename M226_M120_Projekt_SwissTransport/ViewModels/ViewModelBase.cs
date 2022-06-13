@@ -7,17 +7,27 @@ using System.Net.Http;
 
 namespace M226_M120_Projekt_SwissTransport.ViewModels
 {
+    //Base for all ViewModels, implements INotifyPropertyChanged and stores Properties and Methods for API Calls
     public class ViewModelBase : INotifyPropertyChanged
     {
+        //Properties
+
+        // URL for WebApiHost TransportAPI
         protected const string WebApiHost = "https://transport.opendata.ch/v1/";
+        //HttpClient Object for Http API calls
         protected readonly HttpClient httpClient = new HttpClient();
+        // EventHandler Property for DataBinding
         public event PropertyChangedEventHandler? PropertyChanged;
 
+        //Methods
+
+        //informs View if Property Changed
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        //turns HttpResponse async into JSON string and async into usable Object
         protected T GetObject<T>(Uri uri)
         {
             HttpResponseMessage response = this.httpClient
@@ -31,6 +41,8 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
 
             return JsonConvert.DeserializeObject<T>(content);
         }
+
+        // Gets Stations from the autocomplete Listbox
         public Stations GetStations(string name)
         {
             if (string.IsNullOrEmpty(name))

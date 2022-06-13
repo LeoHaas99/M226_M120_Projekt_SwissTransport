@@ -40,7 +40,7 @@
             </Button>
         </WrapPanel>
         <Grid Grid.Column="1">
-            <Button Margin="0,40,0,0" Padding="20" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button Margin="0,40,0,0" Padding="20" VerticalAlignment="Top" HorizontalAlignment="Center" IsEnabled="False">
                 <TextBlock Text="Stationen in meiner Nähe anzeigen" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
