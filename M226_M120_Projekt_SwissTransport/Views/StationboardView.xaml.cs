@@ -79,7 +79,28 @@ namespace M226_M120_Projekt_SwissTransport.Views
 
         private void TbxStation_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            LbxStation.Visibility = Visibility.Visible;
+            if (e.Key == Key.Down)
+            {
+                LbxStation.SelectedIndex = 0;
+                LbxStation.Focus();
+            }
+            else if (e.Key == Key.Enter)
+            {
+                LbxStation.Visibility = Visibility.Hidden;
+            }
+        }
 
+        private void LbxStation_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                TbxStation.Text = LbxStation.SelectedValue.ToString();
+                LbxStation.Visibility = Visibility.Hidden;
+                TbxStation.CaretIndex = TbxStation.Text.Length;
+                TbxStation.ScrollToEnd();
+                TbxStation.Focus();
+            }
         }
     }
 }

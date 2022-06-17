@@ -29,6 +29,10 @@ namespace M226_M120_Projekt_SwissTransport.ViewModels
             {
                 station = value;
                 OnPropertyChanged(nameof(Station));
+                if (Station.Length > 2)
+                {
+                    Stations = this.GetStations(Station);
+                }
             }
         }
 
