@@ -76,5 +76,10 @@ namespace M226_M120_Projekt_SwissTransport.Views
                 LbxStation.Visibility = Visibility.Hidden;
             }
         }
+
+        private void TbxStation_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

@@ -25,7 +25,7 @@
                     <RowDefinition Height="10"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Von:" Grid.Row="0" Margin="20,0,0,0"></Label>
-                <TextBox Name="TbxStation" Grid.Row="1" TextWrapping="Wrap" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Station, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="TbxStation_GotFocus" LostFocus="TbxStation_LostFocus" TabIndex="2">
+                <TextBox Name="TbxStation" Grid.Row="1" TextWrapping="Wrap" Width="300" Height="50" VerticalContentAlignment="Center" Margin="20,0,20,0" Text="{Binding Station, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" GotFocus="TbxStation_GotFocus" LostFocus="TbxStation_LostFocus" TabIndex="2" PreviewKeyDown="TbxStation_PreviewKeyDown">
                     <TextBox.InputBindings>
                         <KeyBinding Key="Return" Command="{Binding StationBoardCommand}"></KeyBinding>
                     </TextBox.InputBindings>
