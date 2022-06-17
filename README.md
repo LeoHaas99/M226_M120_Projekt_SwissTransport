@@ -2,6 +2,7 @@
 GitHub Repo für das Projekt von Leo Haas und Noah Zemljic für M226B und M120.<br>
 <h2>Abgaben:</h2>
 Alle Text-Abgaben befinden sich im doc-Ordner.<br>
+Das Klassendiagramm befindet sich als PDF und als Visio-Dokument auch im doc-Ordner. Ein Beschreibungstext ist in der Dokumentation unter Umsetzung III<br>
 <h3>Umsetzung II:</h3>
 Für die Umsetzung II wurde ein Kleines Beispiel hinterlegt. Mit einem Tutorial wurde auch die erste View Connections umgesetzt.
 <h3>Umsetzung III:</h3>
